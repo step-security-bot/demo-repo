@@ -3,5 +3,10 @@ runs:
  using: composite
  steps: 
  - run: echo "from composite action"
+   shell: bash
+   
  - run: echo "from composite action"
+   shell: bash
+   
  - run: echo "from composite action"
+   shell: bash
