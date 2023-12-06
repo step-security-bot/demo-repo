@@ -1,0 +1,7 @@
+name: my action
+runs:
+ using: composite
+ steps: 
+ - run: echo "from composite action"
+ - run: echo "from composite action"
+ - run: echo "from composite action"
