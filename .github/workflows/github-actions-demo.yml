@@ -8,17 +8,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - run: |
-        echo "🎉 The job was triggered by event: ${{ github.event_name }}"
-        echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
+    - uses: ./.github/actions/demo-action
 
-    - name: List files in the repository
-      run: |
-        echo "The repository ${{ github.repository }} contains the following files:"
-        tree
-
-    - name: Demo set-output
-      id: demo-output
-      run: echo "myvariablename=value2" >> $GITHUB_OUTPUT
-
-    - run: echo "Hi [${{ steps.demo-output.outputs.myvariablename }}]"
+   
