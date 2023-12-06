@@ -1,7 +1,6 @@
-#name: GitHub Actions Demo
+name: GitHub Actions Demo
 
 on: [workflow_dispatch]
-
 
 jobs:
   demo-job-definition:
@@ -17,5 +16,12 @@ jobs:
       run: |
         echo "The repository ${{ github.repository }} contains the following files:"
         tree
+
+  job-2:
+     runs-on: ubuntu-latest
+     steps:
+     - run: echo "Hello"
+  
+    
 
   
