@@ -1,13 +1,23 @@
 name: GitHub Actions Demo
 
-on: [workflow_dispatch]
+on: 
+  push:
+  workflow_dispatch:
 
 jobs:
   job-1:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - run: |
+        echo "Secret value: ${{ secrets.DEMO_EXAMPLE }}"
+        echo "Secret value: ${{ vars.DEMO_EXAMPLE }}"
 
-    - uses: ./.github/actions/demo-action
+  job-2:
+    runs-on: ubuntu-latest
+    environment: demo
+    steps:
+    - run: |
+        echo "Secret value: ${{ secrets.DEMO_EXAMPLE }}"
+        echo "Secret value: ${{ vars.DEMO_EXAMPLE }}"
 
    
